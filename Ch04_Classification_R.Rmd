@@ -223,10 +223,19 @@ table(Test_COVID$SURVIVED)/nrow(Test_COVID)
 
 Q1. What metric will you use? Why? 
 
+```{r}
+
+```
+
+
 Your code:
 ```{r,echo=TRUE}
-#
-#
+glm_fit2 <- glm(SURVIVED_bin ~ AGE_TRUNK * SEX + , family = binomial, data = Covid_Data)
+summary(glm_fit2)
+
+ggplot(Covid_Data)+geom_bar()+aes(x=PNEUMONIA,fill=SURVIVED)
+ggplot(Covid_Data)+geom_bar()+aes(x=ASTHMA,fill=SURVIVED)
+ggplot(Covid_Data)+geom_bar()+aes(x=TOBACCO,fill=SURVIVED)
 ```
 
 Your answer:
